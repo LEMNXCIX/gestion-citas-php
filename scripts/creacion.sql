@@ -10,8 +10,8 @@ CREATE TABLE usuarios (
 -- Crear tabla de especialidades
 CREATE TABLE especialidades (
     id_especialidad INTEGER PRIMARY KEY AUTOINCREMENT,
-    nombre TEXT NOT NULL UNIQUE CHECK (nombre IN ('Medicina General', 'Pediatría', 'Dermatología')),
-    alias TEXT NOT NULL UNIQUE CHECK (alias IN ('medicina', 'pediatria', 'dermatologia')),
+    nombre TEXT NOT NULL,
+    alias TEXT NOT,
     estado TEXT NOT NULL DEFAULT ('activo') CHECK (estado IN ('activo', 'inactivo')),
     creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     actualizado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
