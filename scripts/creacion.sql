@@ -11,7 +11,7 @@ CREATE TABLE usuarios (
 CREATE TABLE especialidades (
     id_especialidad INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre TEXT NOT NULL,
-    alias TEXT NOT,
+    alias TEXT NOT NULL,
     estado TEXT NOT NULL DEFAULT ('activo') CHECK (estado IN ('activo', 'inactivo')),
     creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     actualizado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP

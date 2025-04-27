@@ -5,7 +5,7 @@ require_once "routes/viewsRoutes.php";
 require_once "routes/especialidadRoutes.php";
 require_once __DIR__ . '/routes/especialidadRoutes.php';
 $router = new Router();
-$router->add("GET", "/styles.css", function () {
+$router->add("GET", "/styles", function () {
     if (file_exists("frontend/styles.css")) {
         header("Content-Type: text/css;");
         echo file_get_contents("frontend/styles.css");
