@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS citas;
+DROP TABLE IF EXISTS especialidades;
+DROP TABLE IF EXISTS usuarios;

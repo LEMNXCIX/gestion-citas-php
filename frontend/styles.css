@@ -1,0 +1,190 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 1 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #585858;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #f9f9f9;
+
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 1px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #dddddd;
+}
+
+/* Estilo del select */
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: border-color 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+
+.form-group select:focus {
+    border-color: #000000;
+    outline: none;
+    background-color: #f0f0f0;
+    /* Cambia el fondo al enfocar */
+}
+
+/* Estilo para las opciones dentro del select */
+.form-group select option {
+    font-size: 14px;
+    color: #333;
+    padding: 5px;
+}
+
+.btn-eliminar {
+    padding: 5px 10px;
+    color: white;
+    background-color: #d9534f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-eliminar:hover {
+    background-color: #c9302c;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilo de la tabla */
+#tablaDatos {
+    width: 80%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 1 5px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+#tablaDatos thead {
+    background-color: #000000;
+    color: white;
+}
+
+#tablaDatos th,
+#tablaDatos td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+#tablaDatos th {
+    font-size: 16px;
+}
+
+#tablaDatos tbody tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+#tablaDatos tbody tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+
+/* Responsive tabla */
+@media screen and (max-width: 600px) {
+    #tablaDatos {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #tablaDatos th,
+    #tablaDatos td {
+        padding: 8px 10px;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pantalla de Datos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <button type="button" onclick="window.location.href='/';">
+        Ingresar Nueva cita
+      </button>
+    </nav>
+    <h1>Pantalla de Datos</h1>
+
+    <table id="tablaDatos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Estado</th>
+          <th>Paciente</th>
+          <th>Especialidad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+    <script>
+      function cargarDatos() {
+        fetch("api/citas")
+          .then((response) => response.json())
+          .then((datos) => {
+            const tabla = document
+              .getElementById("tablaDatos")
+              .querySelector("tbody");
+
+            tabla.innerHTML = "";
+
+            if(datos.error)
+            {
+              return;
+            }
+            datos.forEach((dato) => {
+              const fila = document.createElement("tr");
+              fila.innerHTML = `
+                  <td>${dato.id_cita}</td>
+                  <td>${dato.estado}</td>
+                  <td>${dato.usuario.nombre}</td>
+                  <td>${dato.especialidad.nombre}</td>
+                  <td>
+                    <button class="btn-eliminar" onclick="eliminarDato(${dato.id_cita})">
+                      Eliminar
+                    </button>
+                  </td>
+              `;
+              tabla.appendChild(fila);
+            });
+          })
+          .catch((error) => console.error("Error al obtener datos:", error));
+      }
+
+      function eliminarDato(id_cita) {
+        fetch(`api/citas/${id_cita}`, {
+          method: "DELETE",
+        })
+          .then((response) => {
+
+            if (response.ok) {
+              alert("Cita eliminada correctamente");
+              cargarDatos();
+            } else {
+              alert("Error al eliminar la cita");
+            }
+          })
+          .catch((error) => console.error("Error al eliminar:", error));
+      }
+
+      cargarDatos();
+    </script>
+  </body>
+</html>
