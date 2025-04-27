@@ -26,7 +26,7 @@ Este proyecto es una aplicación web para la gestión de citas de pacientes que 
 
 `.read ./scripts/creacion.sql` 
 
-4. Para revesar lo anterior, ejecuta: 
+4. Para revesar lo anterior en caso de ser necesario, ejecuta: 
 
  `sqlite3 database.sqlite`    
 
